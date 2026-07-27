@@ -15,7 +15,9 @@ const pokemons = [
   "mew",
 ];
 
-export function Cards() {
+let chosen = [];
+
+export function Cards({ handleScore }) {
   const [pokeData, setPokeData] = useState([]);
 
   useEffect(() => {
@@ -45,11 +47,30 @@ export function Cards() {
   function handleCardClick(e) {
     const newPokeData = [...pokeData];
     setPokeData(newPokeData.sort(() => 0.5 - Math.random()));
+
+    chosen.push(e.currentTarget.id);
+    console.log(chosen);
+    const selectedCards = [...chosen];
+    const lastSelection = selectedCards.pop();
+    if (!selectedCards.length && lastSelection) {
+      handleScore();
+    } else if (!selectedCards.includes(lastSelection)) {
+      handleScore();
+    } else {
+      console.log("YOU LOOSE");
+      chosen = [];
+      handleScore(0);
+    }
   }
 
   const pokemonItems = pokeData.map((data) => {
     return (
-      <li key={data.name} onClick={handleCardClick} className="card">
+      <li
+        key={data.name}
+        id={data.name}
+        onClick={handleCardClick}
+        className="card"
+      >
         <p className="card__title">{data.name}</p>
         <img className="card__img" src={data.imgUrl} alt={data.name} />
       </li>
