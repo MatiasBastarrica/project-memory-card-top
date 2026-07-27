@@ -42,9 +42,14 @@ export function Cards() {
     };
   }, []);
 
+  function handleCardClick(e) {
+    const newPokeData = [...pokeData];
+    setPokeData(newPokeData.sort(() => 0.5 - Math.random()));
+  }
+
   const pokemonItems = pokeData.map((data) => {
     return (
-      <li key={data.name} className="card">
+      <li key={data.name} onClick={handleCardClick} className="card">
         <p className="card__title">{data.name}</p>
         <img className="card__img" src={data.imgUrl} alt={data.name} />
       </li>

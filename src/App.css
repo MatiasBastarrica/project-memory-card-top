@@ -13,6 +13,7 @@
   flex: 1;
   flex-basis: calc(16% - 1rem);
   /* width: 12%; */
+  cursor: pointer;
 }
 
 .card__title {
