@@ -4,7 +4,7 @@
 
 ![](./src/assets/screenshot.png)
 
-[Live Preview](https://joyful-fenglisu-3a9afb.netlify.app/)
+[Live Preview](https://memory-card-game-top-mpb.netlify.app/)
 
 ## Introduction
 
