@@ -71,8 +71,8 @@ export function Cards({ handleScore }) {
         onClick={handleCardClick}
         className="card"
       >
-        <p className="card__title">{data.name}</p>
         <img className="card__img" src={data.imgUrl} alt={data.name} />
+        <p className="card__title">{data.name}</p>
       </li>
     );
   });
