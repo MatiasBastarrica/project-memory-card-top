@@ -3,6 +3,7 @@
 body {
   background-color: #ffe4c4;
   padding-inline: 1.5rem;
+  padding-block-end: 1.5rem;
 }
 
 h1 {
